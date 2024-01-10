@@ -1,0 +1,396 @@
+/* universal selector */
+*{
+    margin:0;
+    padding: 0;
+}
+/* اختيار الخط */
+
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap');
+/* الجنرل المنت */
+
+.clear{
+    clear: both;
+}
+.family{
+    font-family:'Varela Round', sans-serif;
+
+}
+.blackiconcolor{
+color:#e74c3c;
+
+}
+
+
+
+
+
+
+
+
+
+/* home_page */
+.home_page1{
+    background-attachment: fixed;
+    background-image: linear-gradient(to bottom,#444 0 10%,rgba(255, 255, 0, 0.2));
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    height: 10000px;
+}
+
+
+
+
+
+/* header */
+
+
+
+.header{
+    position: fixed;
+    width: 100vw;
+    z-index: 3;
+    transition: background 0.5s;
+
+}
+.header:hover{
+    background: #000;
+}
+
+
+/* هذا الكونتينر عشان يكون في النص */
+.continer{
+    width: 80%;
+    margin: auto;
+}
+
+/* منتجات الصفحة */
+.home_products{
+
+    display: flex;
+    overflow-x: scroll;
+   background: transparent;
+   width: 80%;
+   position: absolute;
+   margin: 100px;
+   height: 300px;
+   gap: 10px;
+
+}
+.home_products2{
+    display: flex;
+    position: absolute;
+    margin: 100px;
+
+    top:300px;
+    background: transparent;
+    overflow: scroll;
+    width: 80%;
+    height: 300px;
+    gap: 10px;
+}
+
+
+.home_products .item,.home_products2 .item{
+    background: #fff;
+    box-shadow: rgba(0, 0, 0,0.1);
+    
+    width: 100px;
+    height: 200px;
+    margin: auto 0px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+
+
+/* تعديل صورة اللوجو */
+.header .logo img{
+    height: 70px;
+}
+
+
+.header .logo{
+
+    width: 40%;
+    float: left;
+}
+.header .list{
+    text-align: right;
+
+    width: 60%;
+    float: left;
+}
+
+
+/* تعديل القائمة الرئيسية */
+
+.header .list > li{
+
+    display: inline-block;
+}
+
+
+.header .list > li a{
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 20px 30px;
+}
+
+.header .list > li a:after{
+    content: "";
+    width: 0%;
+    height: 3px;
+    border-radius: 5px;
+    display: block;
+    background: #f05742;
+    transition: width 1s;
+}
+.header .list> li a:hover:after{
+    width: 100%;
+}
+
+.list > li {
+    position: relative;
+}
+/* تعديل قائمة الخيارات */
+.list >li .dropdown{
+    font-family: 'Varela Round' ;
+    list-style: none;
+    position: absolute;
+    background: #000;
+    display: none;
+    top: 60px;
+}
+.option:focus .dropdown{
+    display: block;
+
+}
+
+
+
+
+/* الجزء الثاني */
+/* توسيط العناصر  */
+
+.to_center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
+
+
+.register{
+    background-image: url(../image/background1.jpg);
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+
+.prowsin{
+    font-size: 2em;
+    line-height: 50px;
+    margin-bottom: 10px;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Cairo';
+}
+
+
+.explin{
+
+    font-family: 'Cairo';
+
+}
+
+/* زر التصفح */
+.the_brows{
+    text-decoration: none;
+    color: black;
+    padding: 14px 25px;
+}
+
+/* الازرار بصفة عامة */
+.btn{
+    width: 84px;
+    height: 40px;
+    border: 0px;
+    border-radius: 10px;
+    margin: 20px;
+    transition: opacity 0.7s;
+}
+
+.btn:hover{
+    opacity: 0.8;
+}
+
+
+
+.btn_regist {
+
+    background: #f05742;
+    color: white;
+
+}
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    background: rgba(0, 0, 0, 0.7);
+    
+}
+
+
+
+
+
+/* ----products----- */
+
+.products {
+    position: absolute;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding: 20px;
+    top:100%;
+    margin-left:70px;
+    
+    overflow-x: scroll;
+   width: 80%;
+   gap: 10px;
+
+}
+
+.product {
+    width: 100px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.product img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.product h2 {
+    margin: 10px 0;
+}
+
+.product p {
+    margin: 5px 0;
+}
+
+.product button {
+    background-color: #f1c40f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    border-radius: 5px;
+}
+
+.product button:hover {
+    background-color: #e74c3c;
+    color: white;
+    transform: translate(0,10px);
+}
+
+.header .list li .active{
+    color: #f05742;
+}
+
+/* تحديد استجابة الوسائط */
+@media (max-width:431px) {
+    .continer{
+        width: 100%;
+        margin: auto;
+    }
+    .header .logo img{
+        height: 40px;
+    }
+    
+    
+    .header .logo{
+    
+        width: 10%;
+        float: left;
+    }
+
+
+    .header .list{
+        text-align: right;
+    
+        width: 90%;
+        float: left;
+    }
+    
+.header .list > li a{
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px 15px;
+}
+
+
+
+    .to_center {
+        height: 500px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        line-height: 30px;
+        color: white;
+    }
+    
+    .prowsin {
+        font-size: 1.5em;
+        line-height: 43px;
+        margin-bottom: 10px;
+        font-family: 'Cairo';
+    }
+    .explin {
+        font-family: 'Cairo';
+        font-size: 12px;
+        line-height: 2;
+        margin-bottom: 7px;
+    }
+    .btn {
+        font-size: 20px;
+        width: 23vw;
+        height: 5vh;
+        border: 0px;
+        border-radius: 4px;
+        margin: 0px;
+        transition: opacity 0.7s;
+        margin: 30px 0px 0px 6px;
+    }
+    
+} 
