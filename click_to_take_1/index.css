@@ -34,11 +34,9 @@ color:#e74c3c;
 /* home_page */
 .home_page1{
     background-attachment: fixed;
-    background-image: linear-gradient(to bottom,#444 0 10%,rgba(255, 255, 0, 0.2));
+    background-image: linear-gradient(to bottom,#444 0 10%,#e74c3c);
     background-size: cover;
-    height: 100vh;
-    position: relative;
-    height: 10000px;
+    position:relative;
 }
 
 
@@ -49,14 +47,14 @@ color:#e74c3c;
 
 
 
-.header{
+header{
     position: fixed;
-    width: 100vw;
+    width: 100%;
     z-index: 3;
     transition: background 0.5s;
 
 }
-.header:hover{
+header:hover{
     background: #000;
 }
 
@@ -67,63 +65,23 @@ color:#e74c3c;
     margin: auto;
 }
 
-/* منتجات الصفحة */
-.home_products{
-
-    display: flex;
-    overflow-x: scroll;
-   background: transparent;
-   width: 80%;
-   position: absolute;
-   margin: 100px;
-   height: 300px;
-   gap: 10px;
-
-}
-.home_products2{
-    display: flex;
-    position: absolute;
-    margin: 100px;
-
-    top:300px;
-    background: transparent;
-    overflow: scroll;
-    width: 80%;
-    height: 300px;
-    gap: 10px;
-}
-
-
-.home_products .item,.home_products2 .item{
-    background: #fff;
-    box-shadow: rgba(0, 0, 0,0.1);
-    
-    width: 100px;
-    height: 200px;
-    margin: auto 0px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-}
 
 
 
 
 
 /* تعديل صورة اللوجو */
-.header .logo img{
+header .logo img{
     height: 70px;
 }
 
 
-.header .logo{
+header .logo{
 
     width: 40%;
     float: left;
 }
-.header .list{
+header .list{
     text-align: right;
 
     width: 60%;
@@ -133,13 +91,13 @@ color:#e74c3c;
 
 /* تعديل القائمة الرئيسية */
 
-.header .list > li{
+header .list > li{
 
     display: inline-block;
 }
 
 
-.header .list > li a{
+header .list > li a{
     text-align: center;
     text-decoration: none;
     color: white;
@@ -147,7 +105,7 @@ color:#e74c3c;
     padding: 20px 30px;
 }
 
-.header .list > li a:after{
+header .list > li a:after{
     content: "";
     width: 0%;
     height: 3px;
@@ -156,7 +114,7 @@ color:#e74c3c;
     background: #f05742;
     transition: width 1s;
 }
-.header .list> li a:hover:after{
+header .list> li a:hover:after{
     width: 100%;
 }
 
@@ -262,34 +220,43 @@ color:#e74c3c;
 /* ----products----- */
 
 .products {
-    position: absolute;
+    position: relative;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 20px;
-    padding: 20px;
-    top:100%;
-    margin-left:70px;
+    padding: 10px;
+    top: 130px;
+    margin: auto;
     
     overflow-x: scroll;
-   width: 80%;
+    
+   width: 100%;
    gap: 10px;
 
 }
 
 .product {
-    width: 100px;
-    padding: 20px;
+
+    width: 220px;
+    height:300px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+} 
+
+.product_img {
+    width: 100%; /* تأكيد أن العنصر يأخذ عرض 100% من حاويته */
+    height: 300px; /* ضع ارتفاعًا ثابتًا أو قيمة مناسبة */
+    overflow: hidden; /* لضمان عدم تجاوز الصورة حدود الحاوية */
+    border-radius: 10px;
 }
 
-
-.product img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+.product_img img {
+    width: 100%; /* تأكيد أن الصورة تأخذ عرض 100% من حاويتها */
+    height: 100%; /* تأكيد أن الصورة تأخذ ارتفاع 100% من حاويتها */
+    object-fit: cover; /* تأكيد تكبير أو تصغير الصورة بحيث تغطي العنصر بأكمله دون تشويه النسبة */
 }
+
 
 .product h2 {
     margin: 10px 0;
@@ -320,36 +287,47 @@ color:#e74c3c;
     transform: translate(0,10px);
 }
 
-.header .list li .active{
+header .list li .active{
     color: #f05742;
 }
 
+/* تعديل قائمة العرض  */
+
+
+
 /* تحديد استجابة الوسائط */
 @media (max-width:431px) {
+
     .continer{
-        width: 100%;
-        margin: auto;
-    }
-    .header .logo img{
-        height: 40px;
-    }
-    
-    
-    .header .logo{
-    
-        width: 10%;
-        float: left;
-    }
-
-
-    .header .list{
+        margin:0px;
         text-align: right;
+    }
+    .media_4{
+        width: 100%;
+    }
+    header .logo img,.media_4 .logo img{
+        height: 20px;
+    }
     
-        width: 90%;
+    
+    header .logo,.media_4 .logo{
+    
+        width: 5%;
+        float: left;
+    }
+   
+
+
+    header .list , .media_4 .list{
+        text-align: right;
+        margin-top: 15px;
+        margin-left: 50px;
+    
+        width: 95%;
         float: left;
     }
     
-.header .list > li a{
+header .list > li a,.media_4 .list > li a{
     text-align: center;
     text-decoration: none;
     color: white;
