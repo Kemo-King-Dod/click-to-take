@@ -56,12 +56,12 @@ body{
 /* header */
 
 
-
+/* #270602 لون داكن */
 header{
     position: fixed;
     width: 100%;
     z-index: 3;
-    background: #270602;
+    background: #24292f;
     transition: background 0.5s;
 
 }
@@ -97,6 +97,7 @@ header .logo{
     position: absolute;
     top:20%;
     left:28%;
+    
 }
 
 
@@ -150,7 +151,8 @@ header .list>li >.active:after{
 /* تعديل قائمة الخيارات */
 .list >li .dropdown{
     height: auto;
-    width: auto;
+    width: 200px;
+    text-align: left;
     line-height: 50px;
     font-family: 'Varela Round' ;
     list-style: none;
@@ -158,6 +160,7 @@ header .list>li >.active:after{
     background: #000;
     display: none;
     top: 60px;
+    left: -80px;
 }
 .option:focus .dropdown{
     display: block;
@@ -212,8 +215,8 @@ header .list>li >.active:after{
 
 /* الازرار بصفة عامة */
 .btn{
-    width: 300px;
-    height: 100px;
+    width: 340px;
+    height: 200px;
     border: 0px;
     border-radius: 10px;
     margin: 20px;
@@ -355,13 +358,14 @@ header .list li .active{
         background-image: url(../image/pngegg.png);
         background-repeat: no-repeat;
         background-position-x:10px;
-        padding-left: 10px;
+        padding: 10px;
         background-position-y: 5px;
         background-size: 20px;
         flex: 3;
         width:70%;
         border-radius: 30px;
         height: 34px;
+        
     }
     #search:focus{
         background-image: none;
@@ -450,23 +454,22 @@ header .list > li a,.media_4 .list > li a{
         line-height: 2;
         margin-bottom: 7px;
     }
-    .btn {
-        font-size: 20px;
-        width: 23vw;
-        height: 5vh;
-        border: 0px;
-        border-radius: 4px;
-        margin: 0px;
-        transition: opacity 0.7s;
-        margin: 30px 0px 0px 6px;
-    }
+    
 
+    .btn{
+        width: 300px;
+        height: 100px;
+        border: 0px;
+        border-radius: 10px;
+        margin: 20px;
+        transition: opacity 0.7s;
+    }
 
 
     /* تعديل حجم المنتجات */
     .product {
         min-width: 120px;
-        min-height: 240px;
+        min-height: auto;
         margin-bottom: 10px;
         border: 1px solid #ccc;
         border-radius: 10px;
