@@ -322,7 +322,7 @@ header .list>li >.active:after{
 
 
 .product button {
-    background-color: #f1c40f;
+    background-color: var(--systemColor);
     color: white;
     border: none;
     padding: 10px 44px;
@@ -336,7 +336,7 @@ header .list>li >.active:after{
 }
 
 .product button:hover {
-    background-color: #e74c3c;
+    background-color: #a32f22b5;
     color: white;
     transform: translate(0,1px);
 }
@@ -346,6 +346,38 @@ header .list li .active{
 }
 
 /* تعديل قائمة العرض  */
+
+
+
+/* --المحلات-- */
+.stores{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    top:130px;
+    text-align: right;
+    gap: 10px;
+}
+
+.store{
+    display: flex;
+    justify-content: right;
+    gap: 20px;
+    align-items: center;
+    text-decoration: none;
+    color: #24292f;
+
+}
+
+.hr{
+    display: block;
+}
+
+
+
+
 
 
 
