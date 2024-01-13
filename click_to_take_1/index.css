@@ -2,7 +2,7 @@
 *{
     margin:0;
     padding: 0;
-    font-family: 'Cairo'
+    font-family: 'Cairo', sans-serif;
 }
 /* اختيار الخط */
 
@@ -41,14 +41,6 @@ body{
 
 
 
-/* home_page */
-.home_page1{
-    background-attachment: fixed;
-    background-image: linear-gradient(to bottom,#444 0 10%,#e74c3c);
-    background-size: cover;
-    position:relative;
-}
-
 
 
 
@@ -61,17 +53,17 @@ header{
     position: fixed;
     width: 100%;
     z-index: 3;
-    background: #24292f;
-    transition: background 0.5s;
+    background: #ffffff;
+    padding-top: 10px;
+    border-bottom: 1px solid #000;
 
 }
-header:hover{
-    background: #000;
-}
+
 
 
 /* هذا الكونتينر عشان يكون في النص */
 .continer{
+    margin-top: 10px;
     width: 80%;
     margin: auto;
 }
@@ -341,6 +333,9 @@ header .list>li >.active:after{
     transform: translate(0,1px);
 }
 
+header .list li .fa-solid{
+    color: #000;
+}
 header .list li .active{
     color: #f05742;
 }
@@ -358,7 +353,7 @@ header .list li .active{
     height: auto;
     top:130px;
     text-align: right;
-    gap: 10px;
+
 }
 
 .store{
@@ -368,12 +363,109 @@ header .list li .active{
     align-items: center;
     text-decoration: none;
     color: #24292f;
+    border-bottom:1px solid #000;
 
 }
 
-.hr{
-    display: block;
+.fa-bell{
+    position: relative;
 }
+.fa-bell:after {
+    position: absolute;
+    content: "0";
+    padding:5px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    font-size: 10px;
+    background: var(--systemColor);
+    color: #ffffff;
+    line-height: 10px;
+    top: -20px;
+}
+
+
+#notefication{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    top:130px;
+    text-align: right;
+    gap: 10px;
+}
+.add_note{
+    background-color:#ff6865 ;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+    
+}
+#cart_e
+{  position: relative;
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    top: 130px;
+    
+
+}
+.add_to_cart
+{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    align-items: center;
+    border-bottom: 0.1px solid #000;
+    
+
+}
+
+.number_of_product
+{    box-sizing: border-box;
+    font-family: sans-serif;
+    padding-left: 30px;
+    width: 70px;
+    height: 50px;
+    align-self: center;
+    font-size: 20px;
+}
+
+/* أضف استايل لأزرار العداد */
+.counter-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.counter-buttonP {
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    margin: 0px;
+    left: 75%;
+}
+.counter-button- {
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333; /* لون الأزرار */
+    left: 20%;
+    margin: 0px; /* تباعد بين الأزرار والعداد */
+}
+
+.counter-button:hover {
+    color: #f00; /* تغيير لون الأزرار عند التحويم */
+}
+
 
 
 
@@ -513,7 +605,7 @@ header .list > li a,.media_4 .list > li a{
     .product button {
         height: 30px;
         width: 100%;
-        background-color: #f1c40f;
+        background-color: var(--systemColor);
         color: white;
         border: none;
         padding: 0px;
