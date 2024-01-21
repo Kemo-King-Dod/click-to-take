@@ -31,6 +31,7 @@ color:#e74c3c;
 
 body{
     font-family: 'Cairo';
+    counter-reset: bellCounter;
 }
 
 
@@ -242,6 +243,9 @@ header .list>li >.active:after{
 
 
 /* ----products----- */
+#products_sec{
+    display: none;
+}
 
 .products {
     position: relative;
@@ -372,7 +376,7 @@ header .list li .active{
 }
 .fa-bell:after {
     position: absolute;
-    content: "0";
+    content: counter(bellCounter);
     padding:5px;
     height: 10px;
     width: 10px;
@@ -387,7 +391,7 @@ header .list li .active{
 
 #notefication{
     position: relative;
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 100%;
     height: auto;
@@ -396,7 +400,6 @@ header .list li .active{
     gap: 10px;
 }
 .add_note{
-    background-color:#ff6865 ;
     display: flex;
     flex-direction: row-reverse;
     gap: 10px;
