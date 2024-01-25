@@ -266,18 +266,23 @@ header .list>li >.active:after{
 .product {
     min-width: 220px;
     min-height:420px;
+    max-width: 220px;
+    max-height: 420px;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 } 
 
 .product_img {
+    display: flex;
     position: relative;
-    width: 100%; /* تأكيد أن العنصر يأخذ عرض 100% من حاويته */
-    height: 100%; /* ضع ارتفاعًا ثابتًا أو قيمة مناسبة */
-    overflow: hidden; /* لضمان عدم تجاوز الصورة حدود الحاوية */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     border-radius: 10px;
     text-align: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .product_img img {
@@ -351,7 +356,7 @@ header .list li .active{
 /* --المحلات-- */
 .stores{
     position: relative;
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 100%;
     height: auto;
@@ -407,7 +412,7 @@ header .list li .active{
 }
 #cart_e
 {  position: relative;
-    display: flex;
+    display: none;
     width: 100%;
     height: auto;
     flex-direction: column;
@@ -415,6 +420,21 @@ header .list li .active{
     
 
 }
+
+#cart_e >.add_to {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 80px;
+    justify-content: flex-start;
+}
+
+
+
+
+
+
+
+/* 
 .add_to_cart
 {
     display: flex;
@@ -425,7 +445,7 @@ header .list li .active{
     border-bottom: 0.1px solid #000;
     
 
-}
+} */
 
 .number_of_product
 {    box-sizing: border-box;
@@ -444,30 +464,23 @@ header .list li .active{
     align-items: center;
 }
 
-.counter-buttonP {
-    position: absolute;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    color: #333;
-    margin: 0px;
-    left: 75%;
-}
-.counter-button- {
-    position: absolute;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    color: #333; /* لون الأزرار */
-    left: 20%;
-    margin: 0px; /* تباعد بين الأزرار والعداد */
+#cart_e >#orderNow{
+    display: block;
+    font: 26px 'Cairo', sans-serif;
+    color: white;
+    background-color: var(--systemColor);
+    height: 4rem;
+    width: 16rem;
+    position: fixed;
+    left: 22%;
+    bottom: 11%;
+    border-radius: 40px;
+    border: 0px;
 }
 
-.counter-button:hover {
-    color: #f00; /* تغيير لون الأزرار عند التحويم */
-}
+
+
+
 
 
 
@@ -596,7 +609,9 @@ header .list > li a,.media_4 .list > li a{
     /* تعديل حجم المنتجات */
     .product {
         min-width: 120px;
-        min-height: auto;
+        min-height: 213px;
+        max-width: 120px;
+        max-height: 213px;
         margin-bottom: 10px;
         border: 1px solid #ccc;
         border-radius: 10px;
@@ -622,3 +637,25 @@ header .list > li a,.media_4 .list > li a{
         vertical-align: middle;
     }
 } 
+
+/* .counter-buttonP {
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    margin: 0px;
+    left: 75%;
+}
+.counter-button- {
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333; 
+    left: 20%;
+    margin: 0px; 
+} */
+
