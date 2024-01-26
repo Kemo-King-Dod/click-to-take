@@ -18,19 +18,25 @@ const btn_home = document.getElementById("btn_home");
 const btn_products = document.getElementById("btn_products");
 const cartItems=document.getElementById('btn_cart');
 const btn_stores =document.getElementById("btn_stores");
+const search =document.getElementById("search");
+
 // ----------------------------------------------------------------------
 
 
 // عد الاشعارات وزر الاضافة الى المفضلة
 let btn_add_to_cart = document.querySelectorAll(".btn_add_to_cart");
-let newDisplayValue = "block";
 let add = 0 ;
 
+let carting_cancel;
 
 let note_Conter=0;
 // -----------------------------------------------------------------------------
 
 
+
+// ----------------------متغيرات  المنتجات-----------------
+
+let product_name=document.querySelectorAll(".products .product .product_img .description");
 
 
 // الايقونات الرئيسية
@@ -135,6 +141,7 @@ function move_to_cart(){
     fa_bars.style.color="#000";
    
     appendBtn();
+    cancelbtns();
    
 
 }
@@ -177,6 +184,8 @@ btn_add_to_cart.forEach(function(btn) {
       };
 });
 
+
+// --------------------دالة انشاء الاشعارات--------------------
 function addToNote(e){
     let btn = e.target;
     
@@ -193,6 +202,22 @@ function addToNote(e){
 
     
 }
+// -----------------------------------------
+// -----------------دالة الازالة من الاشعارات--------------
+function canceledFromNote(e){
+    let btn = e.target;
+    let img = btn.parentElement.children[0];
+    let crs =img.getAttribute("src")
+    notefication.innerHTML+= `<div class="add_note">
+    <img src="${crs}" alt="" class="succ_pro_add" height="100px" width="auto">
+    <h3>تمت الغاء هذا العنصر هذا العنصر بنجاح الى السلة</h3>
+    </div>`;
+
+
+}
+// -------------------------------------------------------
+
+
 // --------------دالة زيادة الاشعارات--------------
 function note_increamnt(){
     note_Conter+=1;
@@ -217,7 +242,9 @@ function addToCart(e){
     let name = btn.parentElement.children[2].innerText;
     let price = btn.parentElement.children[3].innerText;
 
-    cart_section.innerHTML+=`<div class="add_to"> <img src="${img.getAttribute("src")}" alt="" class="cart_img" height="100px" width="auto"><h3>${name}</h3></div>`;
+    cart_section.innerHTML+=`<div class="add_to"> <img src="${img.getAttribute("src")}" alt="" class="cart_img" height="100px" width="auto"><h3>${name}</h3>
+    <button class="cancel_carting">x</button>
+</div>`;
 
 }
 
@@ -233,12 +260,14 @@ function appendBtn(){
     }
     else{
         orderNowBtn.style.display="none";
+
     }
+    orderNowBtn.onclick=function()
+{console.log(carting_cancel);}
     
     
 }
 // ---------------------------------------------------------------
-let product_name=document.querySelectorAll(".products .product .product_img .description");
 
 // --------------------------دالة البحث عن العنصر -------------------
 let a = document.getElementById("search");
@@ -256,16 +285,36 @@ function search_product(e){
 }
 
 // ---------------------------------------------------------------
-let hello =document.getElementById("search")
-hello.addEventListener("keyup",function(e){
+
+// --------------------دالة الضغط على البحث لتفعيل البحث------------------
+search.addEventListener("keyup",function(e){
     if(e.key === "Enter")
     {search_product(e);}
 });
+// ------------------------------------------------------------------------------
 
-// إعادة عرض العناصر بعد إلغاء البحث
+// -------------------إعادة عرض العناصر بعد إلغاء البحث------------
 btn_home.addEventListener("click", function() {
     for (let i = 0; i < product_name.length; i++) {
         product_name[i].parentElement.parentElement.style.display="flex";
 
     }
 });
+// ----------------------------------------------------------------------------------
+
+
+// ------------------زر الغاء العنصر من السلة--------------------
+
+function cancelbtns (){
+    carting_cancel = document.querySelectorAll("#cart_e >.add_to>.cancel_carting");
+    carting_cancel.forEach(function(btnx){
+        btnx.addEventListener("click",function(e){
+            btnx.parentElement.style.display="none";
+            note_increamnt();
+            canceledFromNote(e);
+            add--;
+           appendBtn();
+        });
+    });
+};
+// ----------------------------------------------------
