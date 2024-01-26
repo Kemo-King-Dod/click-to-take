@@ -376,6 +376,7 @@ header .list li .active{
 
 }
 
+/* ايقونة البحث */
 .fa-bell{
     position: relative;
 }
@@ -397,7 +398,7 @@ header .list li .active{
 #notefication{
     position: relative;
     display: none;
-    flex-direction: column;
+    flex-direction: column-reverse;
     width: 100%;
     height: auto;
     top:130px;
@@ -426,8 +427,23 @@ header .list li .active{
     flex-direction: row-reverse;
     gap: 80px;
     justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gray;
+    position: relative;
 }
 
+#cart_e >.add_to>.cancel_carting{
+    height: 40px;
+    width: 40px;
+    background: #ff1919db;
+    color: white;
+    position: absolute;
+    right: 84%;
+    border-radius: 50%;
+    border: 0px;
+
+}
 
 
 
