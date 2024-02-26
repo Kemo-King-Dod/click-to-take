@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<link rel="icon" type="image/png" href="../image/LogoSample_ByTailorBrands.jpg">
+
+<style>
+    /* ستايل لتحسين المظهر */
+    *{
+        font-family: Cairo, sans-serif;
+
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+    width: 80%;
+    margin: auto;
+    margin-top: 140px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+    input[type="text"], input[type="email"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        direction: rtl;
+    }
+
+    input[type="number"],select{
+        direction: rtl;
+        width: 28.5%;
+        padding: 10px;
+        border:1px solid #ccc;
+
+    }
+
+    input[type="submit"] {
+        
+        background-color: #e74c3c;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        border: solid #e74c3c ;
+        box-shadow: 0px 0px 10px #e74c3c;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #e74d3cd6;
+    }
+    .registLabel{
+        
+    text-align: center;
+
+    }
+    
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2 class="registLabel">التسجيل في كليك</h2>
+    <form action="#" id="form">
+        <input type="text" id="fname" name="fname" required placeholder="الاسم الاول" dir="rtl">
+
+        <input type="text" id="lname" name="lname" required placeholder="الاسم الاخير" dir="rtl">
+
+
+        <input type="number" id="year" name="year" min="1900" max="2022" required placeholder="السنة">
+
+        <select id="month" name="month" required >
+            <option value="01">يناير</option>
+            <option value="02">فبراير</option>
+            <option value="03">مارس</option>
+            <option value="04">ابريل</option>
+            <option value="05">مايو</option>
+            <option value="06">يونيو</option>
+            <option value="07">يوليو</option>
+            <option value="08">اغسطس</option>
+            <option value="09">سبتمبر</option>
+            <option value="10">أوكتوبر</option>
+            <option value="11">نوفمبر</option>
+            <option value="12">ديسمبر</option>
+        </select>
+
+        <input type="number" id="day" name="day" min="1" max="31" required placeholder="اليوم">
+
+        <label for="email"></label>
+        <input type="email" id="email" name="email" required placeholder="البريد الإلكتروني" dir="rtl">
+
+        <input type="password" id="password" name="password" required placeholder="كلمة السر" dir="rtl">
+
+        <input type="password" id="confirm_password" name="confirm_password" required dir="rtl" placeholder="تأكيد كلمة السر">
+
+        <input type="submit" value="التسجيل" id="submit">
+    </form>
+  
+</div>
+<script src="../javascript/register.js"></script>
+
+</body>
+</html>

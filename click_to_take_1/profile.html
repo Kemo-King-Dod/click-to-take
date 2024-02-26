@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profil</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* ستايل لتحسين المظهر */
+        *{
+            font-family: Cairo, sans-serif;
+        }
+        .profile{
+            width: 100%;
+            height: 100vh;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+
+        }
+        .option{
+            position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 0 32px;
+    border-radius: 10%;
+    box-shadow: 0px 0px 5px 0px;
+    text-align: center;
+
+        }
+        .profil_image{
+        height: 120px;
+        width: 188px;
+        font-size: 25px;
+        text-align: right;
+    }
+    .fa-wallet ,.fa-list{
+        margin-top: 10px;
+        font-size: 30px;
+    
+
+    }
+    </style>
+    
+    <link rel="stylesheet" href="css/all.min.css">
+    <script src="https://kit.fontawesome.com/1eaed65929.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="../image/LogoSample_ByTailorBrands.jpg">
+</head>
+<body>
+        
+    <header>
+        
+        <div class="continer">
+            <div class="logo">
+                <img src="../image/LogoSample_ByTailorBrands.jpg" alt="" draggable="false">
+                <input type="text" dir="rtl" name="search" id="search" placeholder="                   ابحث عن منتج او محل ">
+                <a href="#" class="profil"><i class="fa-regular fa-user"></i></a>
+                <a href="#" class="btn_bars"><i class="fa-solid fa-bars" id="main_bars">
+                   </i>
+                </a>
+
+                
+            </div>
+            <div id="bars-list">
+                <i class="fa-solid fa-close" id="close-option"></i>
+
+                <div class="Register">
+                    <button class="registerOption  bars-profile">ملفي الشخصي</button>
+                    <button class="registerOption  bars-foverite" onclick="window.location= 'Fovrite.html'">تفضيلاتي</button>
+                    <button class="registerOption  bars-save">المحفوظات</button>
+                    <button class="registerOption  bars-requiest">طلباتي</button>
+                    
+                </div>
+                <div class="notRegister">   
+                    <button class="bars-registerB" onclick="startRegisterBtn()">التسجيل
+                    </button>
+                    <button class="bars-help"> المساعدة والدعم  <i class="fa-solid fa-headset"></i></button></div>
+             
+            </div>           
+
+    </div>
+</header>
+<div class="profile">
+    <div class="profil_image" id="profile_name"></div>
+    <div id="profile_option">
+        <div id="wallet" class="option"><i class="fa-solid fa-wallet"></i>
+            <p>المحفظة</p>
+        
+        </div>
+    <div id="requests" class="option"> <i class="fa-solid fa-list"></i><p>طلباتي
+    </p></div>
+    </div>
+
+
+</div>
+
+
+<nav class="main_btn">
+    <ul class="list family">
+        <li><a href="news.html" id="btn_products" ><i class="fa-solid fa-xl fa-newspaper"></i></a></li>
+        <li><a href="stores.html" id="btn_stores" ><i class="fa-solid fa-xl fa-shop"></i></a></li>
+        <li><a href="start.html" id="btn_home"><i class="fa-solid fa-xl fa-home active" ></i></a></li>
+        <li><a href="notefication.html" id="btn_note"><i class="fa-solid fa-xl fa-bell"></i></a></li>
+        <li><a href="cart.html" id="btn_cart"><i class="fa-solid fa-xl fa-basket-shopping"></i></a></li>
+    
+            
+    </ul></nav>
+    
+    <script src="../javascript/profile.js"></script>
+</body>
+</html>
