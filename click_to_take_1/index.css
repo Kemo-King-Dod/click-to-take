@@ -57,7 +57,12 @@ header{
     background: #ffffff;
     padding-top: 10px;
     border-bottom: 1px solid #000;
+    height: 70px;
 
+}
+
+.logo{
+    display: flex;
 }
 
 
@@ -67,6 +72,7 @@ header{
     margin-top: 10px;
     width: 80%;
     margin: auto;
+
 }
 
 
@@ -80,39 +86,42 @@ header .logo img{
 }
 
 
-header .logo{
-
-    width: 40%;
-    float: left;
-}
 /* محرك البحث */
-#search{
-    position: absolute;
-    top:20%;
-    left:28%;
-    
+
+
+#main_bars{
+
+
 }
 
 
 
-
-header .list{
+.main_btn{
+    z-index: 2;
+    position: fixed !important;
+    display: flex;
+    height: 85px;
+    background: #ffffff;
+    position: fixed;
+    bottom:0px;
+    width: 100%;
+    border-top: 1px solid #000;
+}
+.main_btn .list{
     text-align: right;
-
     width: 60%;
-    float: left;
 }
 
 
 /* تعديل القائمة الرئيسية */
 
-header .list > li{
+.main_btn .list > li{
 
     display: inline-block;
 }
 
 
-header .list > li a{
+.main_btn .list > li a{
     text-align: center;
     text-decoration: none;
     color: white;
@@ -120,7 +129,7 @@ header .list > li a{
     padding: 20px 30px;
 }
 
-header .list > li a:after{
+.main_btn .list > li a:after{
     content: "";
     width: 0%;
     margin-top: 5px;
@@ -130,11 +139,11 @@ header .list > li a:after{
     background: #f05742;
     transition: width 1s;
 }
-header .list> li a:hover:after{
+.main_btn .list> li a:hover:after{
     width: 100%;
 }
 
-header .list>li >.active:after{
+.main_btn .list>li >.active:after{
     width: 100%;
 }
 
@@ -176,28 +185,6 @@ header .list>li >.active:after{
     color: white;
 }
 
-
-.register{
-    background-image: url(../image/background1.jpg);
-    background-size: cover;
-    height: 100vh;
-    position: relative;
-}
-
-.prowsin{
-    font-size: 2em;
-    line-height: 50px;
-    margin-bottom: 10px;
-    /* font-family: 'Montserrat', sans-serif; */
-    font-family: 'Cairo';
-}
-
-
-.explin{
-
-    font-family: 'Cairo';
-
-}
 
 /* زر التصفح */
 .the_brows{
@@ -342,39 +329,72 @@ header .list>li >.active:after{
     transform: translate(0,1px);
 }
 
-header .list li .fa-solid{
+.main_btn .list li .fa-solid{
     color: #000;
 }
-header .list li .active{
+.main_btn .list li .active{
     color: #f05742;
 }
 
 /* تعديل قائمة العرض  */
 
 
-
-/* --المحلات-- */
-.stores{
+.centerShow{
+    padding-top:66px;
     position: relative;
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    top:130px;
-    text-align: right;
-
-}
-
-.store{
     display: flex;
-    justify-content: right;
-    gap: 20px;
+    justify-content: center;
+    align-content: flex-start;
+    height: 90vh;
+    width: 100%;
+    flex-wrap: wrap;
+    background: white;
+    top: 130px;
+    gap: 3px;
+}
+.stores-opt{
+    
+    background: white;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    top: 80px;
+    list-style: none;
+    width: 100%;
+    overflow: scroll;
     align-items: center;
-    text-decoration: none;
-    color: #24292f;
-    border-bottom:1px solid #000;
+    height: 46px;
+    z-index: 2;
 
 }
+.stores-opt li{
+    min-width: 100px;
+    text-align: center;
+}
+.stores-opt li::selection{
+    background: var(--systemColor);
+    color: white;
+}
+.store{
+    color: white;
+    display: flex;
+    min-width: 32vw;
+    max-width: 32vw;
+    height: 26vh;
+    background: #333;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.storeImg{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    border-radius: 10px;
+}
+
 
 /* ايقونة البحث */
 .fa-bell{
@@ -411,9 +431,9 @@ header .list li .active{
     gap: 10px;
     
 }
-#cart_e
+#cart_section
 {  position: relative;
-    display: none;
+    display: flex;
     width: 100%;
     height: auto;
     flex-direction: column;
@@ -422,7 +442,7 @@ header .list li .active{
 
 }
 
-#cart_e >.add_to {
+#cart_section >.add_to {
     display: flex;
     flex-direction: row-reverse;
     gap: 80px;
@@ -433,54 +453,20 @@ header .list li .active{
     position: relative;
 }
 
-#cart_e >.add_to>.cancel_carting{
-    height: 40px;
-    width: 40px;
-    background: #ff1919db;
-    color: white;
-    position: absolute;
-    right: 84%;
-    border-radius: 50%;
-    border: 0px;
-
-}
-
-
-
-
-
-
-/* 
-.add_to_cart
-{
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 10px;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    align-items: center;
-    border-bottom: 0.1px solid #000;
+.cancel-from-cart{
     
-
-} */
-
-.number_of_product
-{    box-sizing: border-box;
-    font-family: sans-serif;
-    padding-left: 30px;
-    width: 70px;
-    height: 50px;
-    align-self: center;
-    font-size: 20px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: bold;
+    border: none;
 }
 
-/* أضف استايل لأزرار العداد */
-.counter-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-#cart_e >#orderNow{
+#cart_section >#orderNow{
     display: block;
     font: 26px 'Cairo', sans-serif;
     color: white;
@@ -507,35 +493,15 @@ header .list li .active{
 
 /* تحديد استجابة الوسائط */
 @media (max-width:431px) {
+    header .logo,.media_4 .logo{
+           
+        display: flex;
+        width: 95%;
+        height: 30px;
+        justify-content: space-between;
+        align-items: center;
     
-
-    #search{
-
-        background-image: url(../image/pngegg.png);
-        background-repeat: no-repeat;
-        background-position-x:10px;
-        padding: 10px;
-        background-position-y: 5px;
-        background-size: 20px;
-        flex: 3;
-        width:70%;
-        border-radius: 30px;
-        height: 34px;
-        
     }
-    #search:focus{
-        background-image: none;
-    }
-    
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
-}
-
-
     .continer {
         display: flex;
         flex-direction: column;
@@ -546,6 +512,33 @@ header .list li .active{
         align-content: center;
         justify-content: flex-end;
     }
+
+    #search{
+        display: inline-block;
+        background-image: url(../image/pngegg.png);
+        background-repeat: no-repeat;
+        background-position-x: 10px;
+        padding: 10px;
+        background-position-y: 5px;
+        background-size: 20px;
+        flex: 1;
+        border-radius: 30px;
+        height: 11px;
+        max-width: 60%;
+        
+    }
+    #search:focus{
+        background-image: none;
+    }
+    
+
+    #main_bars{
+        
+    
+    
+    }
+
+   
     .media_4{
         width: 100%;
     }
@@ -554,30 +547,20 @@ header .list li .active{
     }
     
     
-    header .logo,.media_4 .logo{
-    
-        
-        display: flex;
-        width: 100%;
-        height: 30px;
-        position: relative;
-    
-    }
+   
    
 
 
-    header .list , .media_4 .list{
+    .main_btn .list , .media_4 .list{
         display: flex;
-        text-align: right;
-        margin-top: 15px;
-        margin-left: 30px;
+       
         justify-content:space-between;
     
-        width: 95%;
+        width: 100%;
     
     }
     
-header .list > li a,.media_4 .list > li a{
+.main_btn .list > li a,.media_4 .list > li a{
     text-align: center;
     text-decoration: none;
     color: white;
@@ -585,6 +568,42 @@ header .list > li a,.media_4 .list > li a{
     padding: 10px 10px;
 }
 
+.news{
+    height: auto;
+    width: 100%;
+    vertical-align: bottom;
+    flex-direction: column;
+    padding-top: 80px;
+    text-align: center;
+}
+.newspapers{   
+    display: flex;
+    margin-top: 0;
+    height: auto;
+    width: 100%;
+    color: #000;
+    background: #ffffff;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-bottom: 100px;
+    align-items: center;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+}
+.newspapers .newspaper{
+    display: none;
+    border-radius: 10px;
+    background: #ffffff;
+    border:1px solid rgba(255, 0, 0, 0.113);
+    min-height: 350px;
+    width: 80%;
+    color: #000;
+    box-shadow: 0px 6px 15px -2px rgba(191, 97, 97, 0.381);
+}
+.newspapers .title{
+    display: grid;
+    justify-self: start;
+}
 
 
     .to_center {
@@ -624,9 +643,9 @@ header .list > li a,.media_4 .list > li a{
 
     /* تعديل حجم المنتجات */
     .product {
-        min-width: 120px;
+        min-width: 130px;
         min-height: 213px;
-        max-width: 120px;
+        max-width: 130px;
         max-height: 213px;
         margin-bottom: 10px;
         border: 1px solid #ccc;
@@ -652,26 +671,121 @@ header .list > li a,.media_4 .list > li a{
         border-radius: 0px;
         vertical-align: middle;
     }
+    .fa-user ,.fa-bars{
+        font-size: 24px;
+        color: rgb(126, 125, 125);
+    
+    }
+
+
+    #bars-list{
+        display: none;
+        background: white;
+        height: 100vh;
+        width: 50vw;
+        direction: rtl;
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        border-radius: 20px;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        box-shadow: -5px 1px 1px rgba(0,0,0,0.1);
+        gap: 10px;
+        transition-delay: 4s;
+    }
+    .notRegister{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 18%;
+        gap: 10px;
+    }
+    .bars-registerB {
+        height: 40%;
+        width: 100%;
+        border-radius: 7px;
+        background: var(--systemColor);
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow: 1px 2px 9px 0px #e74c3c;
+        border: 0px;
+    }
+    .bars-help{
+        height: 40%;
+        width: 100%;
+        border-radius: 7px;
+        background: transparent;
+        color: black;
+        font-size: 20px;
+        font-weight: bold;
+        border: 1px solid rgb(188, 188, 188);
+        
+    }
+    .fa-headset{
+        font-size: 30px;
+        color: rgb(188, 188, 188);
+    }
+    #close-option{     
+    font-size: 35px;
+    position: absolute;
+    top: 2%;
+    left: 3%;
+    }
+    .Register{
+        
+    display: flex;
+    height: 100%;
+    margin: 44% 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 6px;
+    }
+    .registerOption{
+        
+    height: 8%;
+    background-color: white;
+    border: none;
+    text-align: right;
+    margin-right: 10%;
+    width: 90%;
+    }
+
+    .favorite{
+        font-weight: 200;
+        font-size: 20px;
+        flex: 1;
+
+    }
+    .price{
+        
+    display: flex;
+    flex-direction: row;
+    margin: auto 0;
+    justify-content: space-around;
+    width: 100%;
+    flex: 3;
+    }
+    .price_num{
+        flex: 2;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: -1px;
+    }
+    .description{
+        
+    font-size: 12px;
+    font-weight: bold;
+    }
+
+    
+
+    
+
+
+    
 } 
-
-/* .counter-buttonP {
-    position: absolute;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    color: #333;
-    margin: 0px;
-    left: 75%;
-}
-.counter-button- {
-    position: absolute;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    color: #333; 
-    left: 20%;
-    margin: 0px; 
-} */
-
