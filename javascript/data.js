@@ -28,7 +28,7 @@ const products = [{
     id: 3,
     name: "طيارة",
     price: 300,
-    image: "../image/عبايات1..jpg",
+    image: "../image/عبايات1.jpg",
     description: 'منتج كبير',
     rate:4,
     storeName:"شهرة",
