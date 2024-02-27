@@ -20,11 +20,14 @@ let rows=[row_of_pro,row1_of_pro,row2_of_pro,row3_of_pro,row4_of_pro,row5_of_pro
 function dorwpro(){
     cart.map(item=>item.id).forEach(id=>allproducts.map((alitem)=>{if(alitem.id==id){alitem.inCart=true;}}));
     favoriteItems.map(item=>item.id).forEach(id=>allproducts.map((alitem)=>{if(alitem.id==id){alitem.isfav=true;}}));
-    row_of_pro.innerHTML="";
-  let temp=0;
-
-  for(let i=0;i<allproducts.length; i++){
-
+    rows.forEach(row=>row.innerHTML="");
+    let temp=0;
+    for(let i=0;i<allproducts.length; i++){
+      
+      
+      if(i%5==0&&i!=0){
+         temp++;
+      }
     rows[temp].innerHTML+=` 
     <div class="product" id="col-of-pro">
     
@@ -36,11 +39,9 @@ function dorwpro(){
     
     <button type="button" class="btn_add_to_cart" onclick="addToCart(${allproducts[i].id})">${allproducts[i].inCart==true?"تمت الاضافة":"اضافة الى السلة"}</button>
     </div>
-    </div>`
-    ;
-    if(i%5==0&&i!=0){
-       temp++;
-    }
+    </div>`;
+
+    
   
       
     };
