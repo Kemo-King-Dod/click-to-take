@@ -23,26 +23,25 @@ function dorwpro(){
     row_of_pro.innerHTML="";
   let temp=0;
 
-  for(let i=0; i<rows.length; i++){
-    for(let j=0; j<allproducts.length; j++)
+  for(let i=0;i<allproducts.length; i++){
 
-    {rows[i].innerHTML+=` 
+    rows[temp].innerHTML+=` 
     <div class="product" id="col-of-pro">
     
     <div class="product_img">
-    <img src="${allproducts[temp].image}" alt="">
+    <img src="${allproducts[i].image}" alt="">
      
-    <div class="prod description">${allproducts[temp].name}</div>
-    <div class="prod price"><i class="fa-regular fa-heart favorite" onclick="favorite(${allproducts[temp].id})"  style="color: ${allproducts[temp].isfav===true?"red":""};"></i><span class="price_num">السعر : ${allproducts[temp].price}  دينار</span></div>
+    <div class="prod description">${allproducts[i].name}</div>
+    <div class="prod price"><i class="fa-regular fa-heart favorite" onclick="favorite(${allproducts[i].id})"  style="color: ${allproducts[i].isfav===true?"red":""};"></i><span class="price_num">السعر : ${allproducts[i].price}  دينار</span></div>
     
-    <button type="button" class="btn_add_to_cart" onclick="addToCart(${allproducts[temp].id})">${allproducts[temp].inCart==true?"تمت الاضافة":"اضافة الى السلة"}</button>
+    <button type="button" class="btn_add_to_cart" onclick="addToCart(${allproducts[i].id})">${allproducts[i].inCart==true?"تمت الاضافة":"اضافة الى السلة"}</button>
     </div>
     </div>`
-    temp++;
-    if(temp%5==0){
-       break;
+    ;
+    if(i%5==0&&i!=0){
+       temp++;
     }
-  }
+  
       
     };
 
